@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        login
+    </title>
+    <link rel="stylesheet" href="/static/login.css">
+    <style>
+        .signup {
+            border-radius: 5px;
+            text-decoration: none;
+            display: block;
+            line-height: 30px;
+            color: white;
+            background: rgb(11, 150, 11);
+            text-transform: uppercase;
+        }
+
+        .signup:hover {
+            background: green;
+        }
+
+        button {
+
+            letter-spacing: 2px;
+        }
+        .msg{
+        display:block
+        margin:auto;
+        padding:7px 15px;
+        color:yellow;
+        letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="bg">
+    <div class="logo">
+        <img src="static/img/user-logo.png" alt="login" id="photo">
+        <h2 class='h2'>User Log In</h2><br>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div>
+                <input type="text" name="username" class=in placeholder="User Name" required>
+            </div>
+            <br>
+            <div>
+                <input type="password" name="password" class=in placeholder="Password" required>
+            </div>
+            <br>
+            <div>
+                <button class="btn" type="submit" name="login">LOG IN</button>
+            </div>
+            <br>
+            <div>
+                <button class="btn"><a href="{%url 'signup'%}" class="signup">Sign Up</a></button>
+            </div>
+            {% if messages %}
+            {% for message in messages %}
+            <h5 {% if message.tags %} class=" {{ message.tags }} msg" {% endif %}> {{ message }} </h5>
+            {% endfor %}
+            {% endif %}
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

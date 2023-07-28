@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <link rel="stylesheet" href="/static/demo.css">
+</head>
+<body>
+<div class="container">
+    <div class="row one">
+        <div class="col-md-1">
+            <img src="/static/img/pk.JPG" alt="logo">
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                {% if user.is_authenticated %}
+                <div class="col-12">
+                    <marquee behavior="alternate" direction="right" onmouseover="stop()" onmouseout="start()"
+                             scrollamount="3" class="marq"><a href="https://github.com/pkwangya/DjangoProject">Hey <span class="text-dark">
+                  {{ user.first_name }}
+                </span>! Admin Username and Password is in my github Repo</a></marquee>
+                </div>
+                {% else %}
+                <div class="col-12">
+                    <marquee behavior="alternate" direction="right" onmouseover="stop()" onmouseout="start()"
+                             scrollamount="3" class="marq"><a href="https://github.com/pkwangya/DjangoProject">Login or Signup to access all pages or see in my Github Repo</a></marquee>
+                </div>
+                {% endif %}
+                <div class="col-12">
+                    <i class="fa fa-home" id="icon"></i>
+                    <ul class="nav" id="navid">
+<!--                        {{request.path}}-->
+                        <li class="list"><a href="/" class="nav-link {% if request.path == '/' %} active {% endif %}">Home</a></li>
+                        <li class="list"><a href="/blogs/" class="nav-link {% if request.path == '/blogs/' %} active {% endif %}">Blog</a></li>
+                        <li class="list"><a href="/services/" class="nav-link {% if request.path == '/services/' %} active {% endif %}">Service</a></li>
+                        <li class="more"><a href="/dropdown/" class="nav-link {% if request.path == '/dropdown/'%} active {% endif %}">More <i class="fa fa-caret-down"></i></a>
+                            <nav class="dropdown">
+                                <a href="#" class="" id="nav-link">Link one</a>
+                                <a href="#" class="" id="nav-link">Link two</a>
+                                <a href="#" class="" id="nav-link">Link three</a>
+                                <a href="#" class="" id="nav-link">Link four</a>
+                            </nav>
+                        </li>
+                        <li class="list"><a href="{% url 'about' %}" class="nav-link {% if request.path == '/about-us/' %} active {% endif %}">About</a></li>
+                        <li class="list"><a href="{% url 'contact' %}" class="nav-link {% if request.path == '/contact/' %} active {% endif %}">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <a href="{% url 'signup' %}"><button class="btn btn-info my-2">Apply</button></a>
+            <br>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="text-decoration-none text-white btn btn-danger mt-2" role="button">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="text-decoration-none text-white btn btn btn-primary mt-2" role="button">LogIn</a>
+            {% endif %}
+
+        </div>
+
+            {% if messages %}
+            {% for message in messages %}
+            <h5 {% if message.tags %} class=" {{ message.tags }} msg float-right" {% endif %}><b>Hello {{fname}}! </b>{{ message }} </h5>
+            {% endfor %}
+            {% endif %}
+    </div><!--row 1-->
+
+    <script>
+       /* let work=document.getElementById('navid')
+        function hfunction(){
+          if(work.className==='nav'){
+            work.className+='show'
+          }else{
+            work.className='nav'
+          }
+        }*/
+
+
+
+    </script>
+    <script>
+        $(document).ready(function(){
+          $('#icon').click(function(){
+            $('.nav').toggleClass("show");
+          })
+        })
+    </script>
+</div><!--container-->

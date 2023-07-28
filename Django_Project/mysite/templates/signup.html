@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        login
+    </title>
+    <link rel="stylesheet" href="/static/home.css">
+    <style>
+        .signup {
+            border-radius: 5px;
+            text-decoration: none;
+            display: block;
+            line-height: 30px;
+            color: white;
+            background: rgb(11, 150, 11);
+            text-transform: uppercase;
+        }
+
+        .signup:hover {
+            background: green;
+        }
+
+        button {
+
+            letter-spacing: 2px;
+        }
+        .msg{
+        display:block
+        margin:auto;
+        padding:10px 20px;
+        color:orange;
+        letter-spacing: 1px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="bg">
+    <div class="logo">
+        <img src="static/img/user-logo.png" alt="login" id="photo">
+        <h2 class='h2'>User Sign Up</h2><br>
+        <form action="" method="POST">
+            {%csrf_token%}
+            <div>
+                <input type="text" name="username" class=in placeholder="User Name" required>
+            </div>
+            <br>
+            <div>
+                <input type="text" name="fname" class=in placeholder="First Name" required>
+            </div>
+            <br>
+            <div>
+                <input type="text" name="lname" class=in placeholder="Last Name">
+            </div>
+            <br>
+            <div>
+                <input type="email" name="email" class=in placeholder="Email" required>
+            </div>
+            <br>
+            <div>
+                <input type="password" name="pass1" id="password1" class=in placeholder="Create Password" required>
+            </div>
+            <br>
+            <div>
+                <input type="text" name="pass2" id="password2" class=in placeholder="Confirm Password" required>
+            </div>
+            <br>
+            <div>
+                <button class="btn" type="submit" name="login">Sign Up</button>
+            </div>
+            <br>
+            {% if user.is_authenticated %}
+            <button class="btn signup"><a href="{%url 'homepage'%}" class="signup" style="background-color:yellow; color:black;">Go to HomePage</a></button>
+            {% else %}
+            <div>
+                <button class="btn signup"><a href="{%url 'login'%}" class="signup">LOG IN</a></button>
+            </div>
+            {% endif %}
+            {% if messages %}
+            {% for message in messages %}
+            <h5 {% if message.tags %} class=" {{ message.tags }} msg" {% endif %}> {{ message }} </h5>
+            {% endfor %}
+            {% endif %}
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

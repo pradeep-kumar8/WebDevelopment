@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row cover py-5">
+        <div class="col-md-5 text-center cover-div">
+            <img class="cover-logo px-1"
+                 src="/static/img/pklog.JPG"
+                 alt="brand logo">
+        </div>
+        <div class="col-md-7">
+            <h2 class="h2-heading">
+                Hi
+                <span class="text-warning">
+                  {{ user.get_full_name }}
+                </span>
+                 ! Your Welcome here
+            </h2>
+            <h1 class="h1-heading">
+                Let's Make <span class="dw">Digital World</span>
+            </h1>
+            <h4 class="h4-heading">I hope you will enjoy<br>and make fun!</h4>
+        </div>
+    </div><!--row-->
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="main-topic">Latest News Here !</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-4 article">
+                    <h5>Article one</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Necessitatibus quam perferendis reprehenderit repudiandae dicta. At ipsam architecto illo
+                        doloribus,
+                        cupiditate veritatis alias harum velit eaque voluptate ut necessitatibus id recusandae! Non,
+                        eius.
+                        Nihil accusantium distinctio, quam dolorum itaque ea illum.</p>
+                </div>
+                <div class="col-md-4 article">
+                    <h5>Article one</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Necessitatibus quam perferendis reprehenderit repudiandae dicta. At ipsam architecto illo
+                        doloribus,
+                        cupiditate veritatis alias harum velit eaque voluptate ut necessitatibus id recusandae! Non,
+                        eius.
+                        Nihil accusantium distinctio, quam dolorum itaque ea illum.</p>
+                </div>
+                <div class="col-md-4 article">
+                    <h5>Article one</h5>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Necessitatibus quam perferendis reprehenderit repudiandae dicta. At ipsam architecto illo
+                        doloribus,
+                        cupiditate veritatis alias harum velit eaque voluptate ut necessitatibus id recusandae! Non,
+                        eius.
+                        Nihil accusantium distinctio, quam dolorum itaque ea illum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

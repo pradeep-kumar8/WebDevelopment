@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center my-4">
+    <h1>Read our Blogs</h1>
+    <div class="row">
+        <form action="" method="get" class="my-3 ml-4">
+            {% if servicesdata %}
+            <input type="text" name="stext" id="" placeholder="S e a r c h">
+            <input type="submit" value="Search">
+            {% endif %}
+        </form>
+        <div class="col-md-12">
+            <div class="row">
+                {% for n in servicesdata %}
+                <div class="col-md-3 article border m-auto">
+                    <h5>{{n.blog_title | capfirst | safe}}</h5>
+                    <p>{{n.blog_desc | safe | slice:195}} {% if n.blog_desc|length >= 200 %}<a href="/newsDes/{{n.id}}"
+                                                                                               class="text-decoration-none">More...</a>
+                        {% endif %}</p>
+                </div>
+                {% empty %}
+                <p>No record found</p>
+                {% endfor %}
+            </div>
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center mt-3">
+                    {% if servicesdata.has_previous %}
+                    <li class="page-item"><a class="page-link" href="/blogs/?page=1">First</a></li>
+                    <li class="page-item"><a class="page-link"
+                                             href="/blogs/?page={{servicesdata.previous_page_number}}">Previous</a></li>
+                    {% endif %}
+
+                    {% for i in pagelist %}
+                    <li class="page-item"><a class="page-link" href="/blogs/?page={{i}}">{{i}}</a></li>
+                    {% endfor %}
+
+                    {% if servicesdata.has_next %}
+                    <li class="page-item"><a class="page-link" href="/blogs/?page={{servicesdata.next_page_number}}">Next</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="/blogs/?page={{last}}">Last</a></li>
+                    {% endif %}
+                </ul>
+            <a href="{% url 'addblog' %}" class="float-right text-decoration-none">Add Blogs +</a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+<div class="container end-section mt-3">
+    <div class="text-light bg-dark" style="text-align:center">
+    {{msg}}
+    </div>
+    <div class="row text-center">
+        <div class="col-12 fhead">
+            <h1>Also Visit...</h1>
+        </div>
+        <div class="col-md-6 footer-service">
+            <div class="row text-center">
+                <div class="col-md-6 Service">
+                    <h4>Knowladge about Web</h4>
+                    <a href="#">Front-End Development</a>
+                    <a href="#">Website Development</a>
+                    <a href="#">Web Development</a>
+                    <a href="#">Wordpress & CMS</a>
+                    <a href="#">Programming</a>
+                </div>
+                <div class="col-md-6 Service">
+                    <h4>Related Goals</h4>
+                    <a href="#">Web Designing</a>
+                    <a href="#">Front-End Development</a>
+                    <a href="#">Back-End Development</a>
+                    <a href="#">Full Stack Development</a>
+                    <a href="#">Android Development</a>
+                    <a href="#">Software Development</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 footer-form">
+            <h3>Contact to Us</h3>
+            <form action="{% url 'ctu' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" name="fname" placeholder="First Name" required>
+                <input type="text" name="lname" placeholder="Last Name"  required>
+                <input type="date" name="dob" id="dob" placeholder="D-O-B" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="number" name="phone" id="Mobile no" placeholder="Mobile no." required>
+                <input type="file" name="file" id="file" placeholder="upload your file">
+                <button type="submit" class="btn">submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="row footer text-light">
+        <div class="col-12">
+            <div class="container">
+                <p>&copy; Copyright Company by NIET from 2021 <span><i class="fa fa-facebook"></i> <i
+                        class="fa fa-twitter"></i> <i class="fa fa-google-plus"></i></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
