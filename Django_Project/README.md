@@ -1,7 +1,7 @@
 # DjangoProject
 Django Project
 
-I create a Djanog project with using HTML, CSS, BootStrap, Python and Django in which I provode features below
+I create a Djanog project with using HTML, CSS, BootStrap, Python and Django in which I provode features mentioned below
 1 -: User can't open pages without login
 2 -: New user can signup for login and login to check all pages
 3 -: if user logout He can't show pages again without login again
