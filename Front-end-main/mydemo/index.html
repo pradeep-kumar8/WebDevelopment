@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>five demo</title>
+        <script src="https://kit.fontawesome.com/68a07dc6f8.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="five.css">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
+    </head>
+    <body onload="namefunction()">
+        <div class="container-fluid  c-cover">
+            <div class="row">
+                <div class="col-md-8 menubar">
+                    <p id="date"></p>
+                    <p id="name"></p>
+                    <i class="fa fa-home"></i>
+
+                    
+                <script>
+                    setInterval(dateintr, 1000);
+                    function dateintr() {
+                    let newdate = new Date();
+                    document.getElementById("date").innerHTML = newdate.toLocaleTimeString();
+                    }
+                </script>
+                <script>
+                    var person = prompt("What's Your Name -:");
+                    var pname;
+                    function namefunction() {
+                      if (person == null || person == "") {
+                            alert('Entar a Valid Name');
+                            window.location.reload();
+                      } else {
+                        pname = "Hi " + person;
+                      }
+                      document.getElementById("name").innerHTML = pname;
+                    }
+                </script>
+                    <div class="nav text-center">
+                        <button class="menu-btn active"><a href="#" class="link-item">Home</a></button>
+                        <button class="menu-btn"><a href="#" class="link-item ">Service</a></button>
+                        <button class="menu-btn"><a href="#" class="link-item ">Blog</a></button>
+                        <button class="menu-btn"><a href="#" class="link-item ">Contact</a></button>
+                        <button class="menu-btn"><a href="#" class="link-item ">About</a></button>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function(){
+                      $('.fa-home').click(function(){
+                        $('.nav').toggleClass('navbar')
+                      })
+                    })
+                  </script>
+                <div class="col-md-8">
+                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+                          <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+                          <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="https://images.unsplash.com/photo-1608903955950-ade266e1a7f2?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNjZ8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="d-block w-100" id="changesrc" alt="new year">
+                            <div class="carousel-caption">
+                              <a href="#" onclick="hellof()">Change</a>
+                              <p class="d-none d-md-block">If you don't like this image you can change it.</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1608761611867-9a0789021486?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2M3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="rock">
+                            <div class="carousel-caption media">
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-google"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                              <p class="d-none d-md-block">Visit our Social Media</p>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://images.unsplash.com/photo-1609050470947-f35aa6071497?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="child">
+                            <div class="carousel-caption">
+                                <div class="row">
+                                    <div class="col-6 log-in">
+                                        <a href="#" class="Login">Log In</a>
+                                        <p class="d-none d-md-block">You need to Login</p>
+                                    </div>
+                                    <div class="col-6 register">
+                                        <a href="#">Register</a>
+                                        <p class="d-none d-md-block">You can Register Here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </a>
+                    </div>               
+                </div>
+                <script>
+                    let nsrc=document.getElementById('changesrc');
+                    function hellof(){
+                         if(nsrc.src==='https://images.unsplash.com/photo-1608903955950-ade266e1a7f2?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNjZ8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'){
+                         nsrc.src='https://images.unsplash.com/photo-1551524391-a638094a59c5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8aGFwcHklMjBuZXclMjB5ZWFyJTIwMjAyMXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+                    }else{
+                        nsrc.src='https://images.unsplash.com/photo-1608903955950-ade266e1a7f2?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNjZ8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'
+                    }
+                    }
+                </script>
+                <div class="col-md-4 marquee-bar">
+                    <marquee behavior="scroll" direction="down" scrollamount="5" class="marquee" onmouseover="stop()" onmouseout="start()"><img src="https://images.unsplash.com/photo-1550081295-5d987f78050c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8&auto=format&fit=crop&w=300&q=60" alt=""><img src="https://images.unsplash.com/photo-1605798286922-482b37219d6b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE2fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=300&q=60" alt=""><img src="https://images.unsplash.com/photo-1602524206684-fdf6393c7d89?ixlib=rb-1.2.1&ixid=MXwxMjA3fDF8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8&auto=format&fit=crop&w=300&q=60" alt=""><img src="https://images.unsplash.com/photo-1609005071056-62ded34d6f27?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt=""><img src="https://images.unsplash.com/photo-1606787947039-ae6b8927f3d8?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt=""><img src="https://images.unsplash.com/photo-1601205896501-64d1920083e2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fA%3D%3D&auto=format&fit=crop&w=300&q=60" alt=""><img src="https://images.unsplash.com/photo-1609062757924-6c2d01b3b422?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt=""></marquee>                
+                    <h2 class="h2">Ask Quiz</h2>
+                </div>
+            </div><!--row-->
+            <div class="row iconbar text-center">
+                <div class="col-md-3 col-sm-6 bl">
+                    <div class="col-12"><i class="fa fa-anchor"></i></div>
+                    <div class="col-12 lorem">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, eius. Eveniet beatae, dolorem quidem temporibus obcaecati labore voluptatem itaque suscipit.</div>
+                </div>
+                <div class="col-md-3 col-sm-6 bl1">
+                    <div class="col-12"><i class="fab fa-angellist"></i></div>
+                    <div class="col-12 lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit eos ullam libero id est sit, fuga labore repellendus vitae assumenda!</div>
+                </div>
+                <div class="col-md-3 col-sm-6 bl">
+                    <div class="col-12"><i class="fab fa-angular"></i></div>
+                    <div class="col-12 lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci velit dolore reiciendis, corporis at dignissimos deserunt vero quidem odio numquam?</div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="col-12"><i class="fas fa-atom"></i></div>
+                    <div class="col-12 lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolorem voluptatum expedita sit error voluptate omnis quibusdam in pariatur aut!</div>
+                </div>
+            </div><!--row-->
+            <div class="row justify-content-around">
+                <div class="col-md-3 side">
+                    <img src="https://th.bing.com/th/id/OIP.9Dp8UPaoU3PYmLMITZF7MAHaFj?w=192&h=180&c=7&o=5&pid=1.7" alt="elon musk">
+                    <figcaption>Elon Musk</figcaption> <br>
+                    <h6>CEO of Tesla</h6><br>
+                    <p>In 2001, Musk conceived Mars Oasis, an idea to land a miniature experimental greenhouse on Mars, containing food crops growing on Martian regolith, in an attempt to reawaken public interest in space exploration.[71][72] In October 2001, Musk traveled to Moscow with Jim Cantrell (an aerospace supplies fixer), and Adeo Ressi (his best friend from college), to buy refurbished Dnepr Intercontinental ballistic missiles (ICBMs) that could send the envisioned payloads into space. The group met with companies such as NPO Lavochkin and Kosmotras; however, according to Cantrell, Musk was seen as a novice and was consequently spat on by one of the Russian chief designers.[73] The group returned to the United States empty-handed. . In February 2002, the group returned to Russia to look for three ICBMs, bringing along Mike Griffin.</p>
+                </div>
+                
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+                <div class="col-md-8">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/NywQcrZuRfY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="owl-carousel owl-theme mt-1">
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1553835973-dec43bfddbeb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8bG9nb3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8bG9nb3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8ZWxlY3Ryb25pY3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1554463529-e27854014799?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTF8fGxvZ298ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGVsZWN0cm9uaWN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1570215171655-49dc3fa810b2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzl8fGRldmVsb3BlcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1496354265829-17b1c7b7c363?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8Y3ViZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1497119146420-012f8fc80a3a?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8ZWFnbGV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1566330929292-00ef3ab8be3f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjN8fGJsdWUlMjBiaXJkfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1560787139-bcec5864f0a1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8bmF0dXJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1575989356732-a6f467b97e97?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDZ8fG5hdHVyfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                        <div class="item">
+                            <img src="https://images.unsplash.com/photo-1580820726687-30e7ba70d976?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzF8fHJvc2V8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        </div>
+                    </div>
+                    <script>
+                        $('.owl-carousel').owlCarousel({
+                            loop:true,
+                            margin:10,
+                            autoplay:true,
+                            autoplayTimeout:1500,
+                            nav:false,
+                            dots:false,
+                            responsive:{
+                                0:{
+                                    items:2
+                                },
+                                600:{
+                                    items:3
+                                },
+                                940:{
+                                    items:4
+                                }
+                            }
+                        })
+                    </script>
+                </div>
+            </div><!--row-->
+        </div><!--container-->
+        <div class="container-fluid bgat py-4 mt-2">
+            <div class="container">
+                <div class="row testimony justify-content-around">
+                    <div class="col-12 testimonial">
+                        <h1>Testimonial</h1>
+                    </div>
+                    <div class="col-sm-3 tone">
+                        <img src="https://th.bing.com/th/id/OIP.IlZj2K-ecAnC4-QtAvJp6QHaE8?w=239&h=180&c=7&o=5&pid=1.7" alt="Milkha Singh">
+                        <figcaption>Milkha Singh</figcaption>
+                        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur, cum.</span>
+                    </div>
+                    <div class="col-sm-3 ttwo">
+                        <img src="https://www.bing.com/th?id=AMMS_2762dd160da785eca87d8c13ebd5dba0&w=158&h=183&c=12&rs=1&o=5&pid=3.1&rm=2" alt="Kevin Mitnick">
+                        <figcaption>Kevin Mitnick</figcaption>
+                        <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, incidunt.</span>
+                    </div>
+                    <div class="col-sm-3 tthree">
+                        <img src="https://th.bing.com/th/id/OIP.yHsO_pD7684o2VAtXPBAcQHaFL?w=281&h=197&c=7&o=5&pid=1.7" alt="Mark Zuckerberg">
+                        <figcaption>Mark Zuckerberg</figcaption>
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, itaque!</span>
+                    </div>
+                </div>
+            </div>
+        </div><!--container-->
+        <div class="container-fluid px-0">
+            <div class="row skill-row text-center">
+                <div class="col-12">
+                    <h1 class="skill">These are My Skills</h1>
+                </div>
+                <div class="col-md-4 col-6 my-3 box">
+                    <div class="skill-circle">
+                        <div class="skill-background">
+                            <img src="https://th.bing.com/th/id/OIP.ClAB5mLiB-7R-rsOYWV0JgHaEo?w=250&h=180&c=7&o=5&pid=1.7" alt="HTML">
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-back">
+                                <p>I learnt coding self. currantly I have knowladge of Front-End Web development.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 my-3 box">
+                    <div class="skill-circle">
+                        <div class="skill-background">
+                            <img src="https://th.bing.com/th/id/OIP.j_nkfmFhPnPHJ2tfj8xJzQHaEP?w=322&h=184&c=7&o=5&pid=1.7" alt="CSS">
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-back">
+                                <p>I learnt coding self. currantly I have knowladge of Front-End Web development.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 my-3 box">
+                    <div class="skill-circle">
+                        <div class="skill-background">
+                            <img src="https://th.bing.com/th/id/OIP.j076mAa8ls6ZWebTmN7hOgHaEK?pid=Api&rs=1" alt="Bootstrap">
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-back">
+                                <p>I learnt coding self. currantly I have knowladge of Front-End Web development.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 my-3 box">
+                    <div class="skill-circle">
+                        <div class="skill-background">
+                            <img src="https://i1.wp.com/constructs.stampede-design.com/wp-content/uploads/2017/01/javascriptlogo-2.jpg?resize=360%2C280" alt="Javascript">
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-back">
+                                <p>I learnt coding self. currantly I have knowladge of Front-End Web development.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 my-3 box">
+                    <div class="skill-circle">
+                        <div class="skill-background">
+                            <img src="https://openjsf.org/wp-content/uploads/sites/84/2019/10/jquery-logo-vertical_large_square.png" alt="jquery">
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-back">
+                                <p>I learnt coding self. currantly I have knowladge of Front-End Web development.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6 my-3 box">
+                    <div class="skill-circle">
+                        <div class="skill-background">
+                            <img src="https://th.bing.com/th/id/OIP.Q5K3ZcL44_iWH0CfOeyh-AHaHW?w=182&h=180&c=7&o=5&pid=1.7" alt="Wordpress">
+                        </div>
+                        <div class="skill-info">
+                            <div class="skill-back">
+                                <p>I learnt coding self. currantly I have knowladge of Front-End Web development.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--container-->
+        <div class="container-fluid end-section">
+            <div class="row text-center">
+                <div class="col-12 fhead">
+                    <h1>Also Visit...</h1>
+                </div>
+                <div class="col-md-6 footer-service">
+                    <div class="row text-center">
+                        <div class="col-md-6 Service">
+                            <h4>Knowladge about Web</h4>
+                            <a href="#">Front-End Development</a>
+                            <a href="#">Website Development</a>
+                            <a href="#">Web Development</a>
+                            <a href="#">Wordpress & CMS</a>
+                            <a href="#">Programming</a>
+                        </div>
+                        <div class="col-md-6 Service">
+                            <h4>Related Goals</h4>
+                            <a href="#">Web Designing</a>
+                            <a href="#">Front-End Development</a>
+                            <a href="#">Back-End Development</a>
+                            <a href="#">Full Stack Development</a>
+                            <a href="#">Android Development</a>
+                            <a href="#">Software Development</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 footer-form">
+                    <h3>Contact to Us</h3>
+                    <form action="#">
+                        <input type="text" name="name" placeholder="First Name">
+                        <input type="text" name="name" placeholder="Last Name">
+                        <input type="date" name="dob" id="dob" placeholder="D-O-B">
+                        <input type="email" name="email" id="email" placeholder="Email">
+                        <input type="number" name="mobile no" id="Mobile no" placeholder="Mobile no.">
+                        <input type="file" name="file" id="file" placeholder="upload your file">
+                        <button type="submit" class="btn">submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row footer text-light">
+                <div class="col-12">
+                    <div class="container">
+                        <p>&copy; Copyright Company by NIET from 2021 <span><i class="fa fa-facebook"></i> <i class="fa fa-twitter"></i> <i class="fa fa-google-plus"></i></span> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

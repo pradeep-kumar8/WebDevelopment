@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>new demo</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<style>
+		body{
+			background-image: url(dd.gif);
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.cover{
+			background-image: url(aa.gif);
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 500px;
+			position:inherit;
+		}
+		.nav-link:hover, .first{
+			background-color:rgb(192, 204, 204);
+		}
+		.image{
+			height: 75px;
+			width: 75px;
+		}
+		.testomony{
+			background-color: rgb(172, 150, 150);
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		.testomony h3:after{
+			background-color: black;
+			content:"";
+			width: 100px;
+			height: 3px;
+			display: block;
+			margin: 10px auto;
+		}
+		.footer-sidebar{
+			color:lavender;
+			background-color: rgb(53, 53, 75);
+		}
+		@media (max-width: 768px) {
+			.section .card{
+				padding: 20px; 
+			}
+			.footer-sidebar{
+				text-align: center;
+			}
+			
+		}
+	</style>
+	<script>
+		function register(){
+			alert('You click Rgister Button');
+		}
+		function page(){
+			alert('Sorry this page will available soon');
+		}
+
+		function myfunction() {
+			document.getElementById('hello').innerHTML='Hey! '+name()+" Welcome in Our WebPage"
+			document.getElementById('hello').style.color="grey";
+			function name(){
+				var demo=prompt('Enter your name here')
+				return demo;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="header">
+		<div class="container-md border">
+			<div class="row first">
+				<div class="col-md-4">
+					<img src="e.png" class="img-thumbnail w-75" alt="">
+				</div>
+				<div class="col-md-4 text-right mt-2">
+					<b>Website-:<a class="text-reset" href=""> www.admintalk.com</b></a><br>
+					<b>Email-:<a href="" class="text-reset"> admin@gmail.com</b></a>
+				</div>
+				<div class="col-md-4 mt-2">
+					<button class="btn bg-success text-white float-right" onclick="register()">Ragister</button>
+				</div>
+			</div>
+			<div class="row bg-light">
+				<div class="col-md-8">
+					<ul class="justify-content-center nav">
+						<a href="" class="mr-lg-5 navbar-brand"><h2 class="border border-success shadow rounded-circle">PR</h2></a>
+						<li class="nav-item"><a href="" class="nav-link">Home</a></li>
+						<li class="nav-item"><a href="" onclick="page()" class="nav-link">Blog</a></li>
+						<li class="nav-item"><a href="" onclick="page()" class="nav-link">Gallery</a></li>
+						<li class="nav-item"><a href="" onclick="page()" class="nav-link">About</a></li>
+						<li class="nav-item"><a href="" onclick="page()" class="nav-link">Contact</a></li>
+					</ul>
+				</div>
+				<div class="col-md-4 h-25 input-group">
+					<input type="text" class="form-control" placeholder="  G o o g l e">
+					<div class="input-group-append"><button type="submit" class="ml-1 rounded input-group-text">Search</button></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="main">
+		<div class="cover container">
+			<div class="row">
+				<div class="col-md-6 mt-5 text-center">
+					<h2 class="bg-info w-75 rounded-circle">Like This Vision</h2>
+					<h4 id="hello" class="bg-warning">Click This Button  <button class="btn btn-primary" onclick="myfunction()">Click</button></h4>
+					<p class="bg-dark text-light lead rounded">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos error exercitationem facilis veritatis atque porro doloribus dignissimos magnam veniam sequi!</p>
+				</div>
+				<div class="col-md-6">
+					<img src="e.png" class="rounded mt-5 w-100" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section container">
+		<div class="row text-center">
+			<div class="col-sm-4 bg-primary">
+				<h3>First Heading</h3>
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate vitae ut, amet voluptatem voluptatum itaque ducimus debitis inventore quaerat accusantium.</p>
+			</div>
+			<div class="col-sm-4 bg-warning">
+				<h3>Second Heading</h3>
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate vitae ut, amet voluptatem voluptatum itaque ducimus debitis inventore quaerat accusantium.</p>
+			</div>
+			<div class="col-sm-4 bg-success">
+				<h3>Third Heading</h3>
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate vitae ut, amet voluptatem voluptatum itaque ducimus debitis inventore quaerat accusantium.</p>
+			</div>
+		</div>
+	</div>
+	<div class="testomony container ">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center my-5">
+				<h3 class="shadow-sm rounded-circle">Testomony</h3>
+			</div>
+			<div class="col-sm-6 mb-3">
+				<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dicta explicabo voluptate pariatur natus! Tempora cumque exercitationem laborum fugit beatae.</div>
+				<img src="d.jfif" class="image rounded-circle" alt="">
+				<div class="author">Pradeep</div>
+				<div class="Company">PR Serives</div>
+			</div>
+			<div class="col-sm-6 mb-3">
+				<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dicta explicabo voluptate pariatur natus! Tempora cumque exercitationem laborum fugit beatae.</div>
+				<img src="a.jfif" class="image rounded-circle" alt="">
+				<div class="author">Pradeep</div>
+				<div class="Company">PR Serives</div>
+			</div>	
+		</div>
+	</div>
+	</div>
+	<div class="section container">
+		<div class="row">
+			<div class="card col-md-3 py-2 col-sm-6">
+				<img src="gov.png" alt="">
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+			</div>
+			<div class="card col-md-3 py-2 col-sm-6">
+				<img src="a.jfif" alt="">
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+			</div>
+			<div class="card col-md-3 py-2 col-sm-6">
+				<img src="d.jfif" alt="">
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+			</div>
+			<div class="card col-md-3 py-2 col-sm-6">
+				<img src="g.jfif" alt="">
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, iusto?
+			</div>
+		</div>
+	</div>
+    <div class="container footer-sidebar">
+		<div class="row justify-content-between">
+			<div class="col-lg-3 col-4">
+				<div class="footer-widget">
+					<h4>About Company</h4>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti quisquam reiciendis fuga.</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-4">
+				<div class="footer-widget">
+					<h4>Company Services</h4>
+					<ul class="nav d-block">
+						<li class="nav-item">service one</li>
+						<li class="nav-item">service two</li>
+						<li class="nav-item">service three</li>
+						<li class="nav-item">service four</li>
+						<li class="nav-item">service five</li>
+						<li class="nav-item">service seven</li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-4">
+				<div class="footer-widget">
+					<h4>Company Address</h4>
+					<address>
+						<b>PR Services inc</b><br>
+						Street no. - 8 <br>
+						Ghaziabad Uttar Pradesh<br>
+						INDIA 201009
+					</address>
+				</div>
+			</div>
+			</div>
+		</div>
+		<footer class="pl-4 bg-secondary">copyright company since 2020</footer>
+	</div>
+</body>
+</html>
